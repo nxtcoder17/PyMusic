@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <title>Flask Music</title>
+        <meta charset='UTF-8'>
+        <!-- href="{{ url_for('static', filename='style.css\?timestamp={{ timestamp }}') }}"> -->
+        <link rel='stylesheet' type='text/css' 
+              href='/static/style.css?version={{ timestamp }}'>
+    </head>
+    <body>
+        <div class='column left'>
+            <p>This is my side Pane</p>
+        </div>
+
+        <div class='column right'>
+            {% for item in songs_list %}
+            <form action='' method='POST' id='{{ item }}'>
+                <input type='hidden' name='song' value='{{ item }}' >
+                    <button type='submit' class='button'>
+                        {{ item.split('/')[-1] }}</button> <br/>
+            </form>
+            {% endfor %}
+        </div>
+    </body>
+
+    <script>
+    /* The line below changes the Current Browser Window location to include the hash for jumping to previously selected anchor */
+        window.onload = function () {
+            window.location.href = window.location.origin + window.location.pathname + "#{{ id }}";
+        }
+    </script>
+</html>
+
