@@ -8,19 +8,13 @@
               href='/static/style.css?version={{ timestamp }}'>
     </head>
     <body>
-        <div class='column left'>
-            <p>This is my side Pane</p>
-        </div>
-
-        <div class='column right'>
-            {% for item in songs_list %}
-            <form action='' method='POST' id='{{ item }}'>
-                <input type='hidden' name='song' value='{{ item }}' >
-                    <button type='submit' class='button'>
-                        {{ item.split('/')[-1] }}</button> <br/>
-            </form>
-            {% endfor %}
-        </div>
+        {% for item in songs_list %}
+        <form action='' method='POST' id='{{ item }}'>
+            <input type='hidden' name='song' value='{{ item }}' >
+                <button type='submit' class='button'>
+                    {{ item.split('/')[-1] }}</button> <br/>
+        </form>
+        {% endfor %}
     </body>
 
     <script>
