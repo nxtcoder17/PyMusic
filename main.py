@@ -16,6 +16,8 @@ playing = False
 thread = None
 lock = threading.Lock()
 
+LOG_FILE = '/tmp/music.log' if os.name == 'posix' else 'music.log'
+
 song = vlc.MediaPlayer()
 
 def init ():
@@ -28,10 +30,10 @@ def init ():
                 # iter_dir (abs_path)
 
     iter_dir (song_path)
-    iter_dir ( os.path.join (song_path, 'olds'))
+    # iter_dir ( os.path.join (song_path, 'olds'))
 
 def write_log (song):
-    with open ('/tmp/music.log', 'at') as file:
+    with open (LOG_FILE, 'at') as file:
         file.write (song + '\n')
 
 
