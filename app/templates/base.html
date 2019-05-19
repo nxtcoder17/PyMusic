@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <title>PyMusic</title>
+        <meta charset='UTF-8'>
+        <link rel='stylesheet' type='text/css' href='/static/css/style.css?version={{ timestamp }}'>
+        <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js'></script>
+        <script src="{{ url_for ('static', filename='js/script.js') }}"></script>
+    </head>
+    <body>
+        <!-- Navigation Bar -->
+        <div class='nav'>
+            <p id='currently_playing_song'>{{ playing }}</p>
+            <a id='pause' onclick = 'PauseMusic()'>Pause</a>
+            <a id='next' onclick = 'NextMusic()'>Next</a>
+        </div>
+
+        # block content
+        # endblock
+
+    </body>
+
+    <script>
+        # block script
+        # endblock
+    </script>
+</html>
+

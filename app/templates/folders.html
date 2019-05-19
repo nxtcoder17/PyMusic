@@ -1,0 +1,68 @@
+# extends ("base.html")
+
+# block content
+        <style>
+            div {
+                margin: 2px;
+            }
+
+            div:hover {
+                color: black;
+                cursor: pointer;
+                background-color: dodgerblue;
+                border-radius: 20px;
+            }
+
+            img {
+                width: 80px;
+                height: 80px;
+            }
+
+            p {
+                font-size: 20px;
+                font-weight: bold;
+            }
+            td {
+                max-width: 400px;
+            }
+        </style>
+
+        <h1>Music Artists Folders </h1>
+        <table>
+        # set count = namespace (a=3)
+        # for folder in folders:
+            # if count.a == 3 or count.a == 0:
+            <tr>
+            # endif
+            # set count.a = count.a - 1
+            <td>
+                <div onclick='AjaxCall("{{ folder }}")'>
+                    <p> <img align="middle" src="{{ url_for ('static', filename='images/folder.png') }}"> {{ folder.split('/')[-1] }}</p>
+                </div>
+            </td>
+
+            # if count.a == 0:
+                #set count.a = 3
+            </tr>
+            # endif
+        # endfor
+        </table>
+
+    <script>
+        function AjaxCall(choice) {
+            $.ajax ({
+                url: 'folders',
+                type: "POST",
+                data: {'path': choice},
+                cache: false,
+                success: function (response) { 
+                    // console.log ("Path: " + choice);
+                    console.log (response);
+                    setTimeout (2000);
+                    document.write (response); 
+                },
+                error: function () { console.log ("Error in Ajax Call"); }
+            });
+        }
+    </script>
+# endblock
