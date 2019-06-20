@@ -1,0 +1,93 @@
+body {
+    /* background: url('https://www.wallpaperu3.com/wp-content/mywallpapers/selena-gomez-wallpaper-4k-680x425.jpg'); */
+    /* background: url('http://localhost:11111/static/images/backdrop.jpg'); */
+    /* background: url('/static/images/backdrop.jpg'); */
+    background-color: black;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#nav {
+    display: inline;
+    position: fixed;
+    border: 2px solid #28ff5e;
+    background-color: black;
+    width: 98%;
+    margin: 10px;
+    margin-top: 0px;
+}
+
+#nav #currently_playing_song {
+    display: block;
+    float: left;
+    padding-left: 20px;
+    font-family: "Monaco";
+    font-size: 20px;
+    font-weight: bold;
+    color: #28ff5e;
+}
+
+#nav .nav_buttons{
+    display: block;
+    float: right;
+    margin: 10px;
+    padding: 8px;
+    cursor: pointer;
+
+    border: 3px solid red;
+    color: red;
+    font-weight: bold;
+    background: transparent;
+}
+
+#nav .nav_buttons:hover {
+    color: black;
+    background-color: red;
+}
+
+#container_songs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-align: center;
+    margin: 0px;
+    padding: 0px;
+    padding-top: 80px;
+}
+
+#container_songs a {
+    --my-color: red;
+
+    margin: 5px;
+    padding: 10px;
+    /* color: black; */
+    /* background-color: red; */
+    border: 1px solid var(--my-color);
+    color: red;
+
+    /* flex: 1; */
+    width: 30%;
+    /* min-width: 50%; */
+    /* max-width: 50%; */
+    text-align: center;
+    font-family: "Cantarell";
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#container_songs a:nth-child(2n) {
+    /* --my-color: #35a2f4; */
+    --my-color: #d8ff00;
+
+    /* background: #94d671; */
+    /* color: black; */
+
+    border: 1px solid var(--my-color);
+    color: var(--my-color);
+}
+
+#container_songs a:hover{
+    color: black;
+    background-color: var(--my-color);
+    cursor: pointer;
+}

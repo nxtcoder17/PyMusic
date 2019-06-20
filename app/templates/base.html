@@ -3,26 +3,24 @@
     <head>
         <title>PyMusic</title>
         <meta charset='UTF-8'>
-        <link rel='stylesheet' type='text/css' href='/static/css/style.css?version={{ timestamp }}'>
+        <link rel='stylesheet' type='text/css'
+            href="/static/css/style2.css?version={{ timestamp }}">
         <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js'></script>
-        <script src="{{ url_for ('static', filename='js/script.js') }}"></script>
+        <!-- <script src="{{ url_for ('static', filename='js/script.js?version=' + timestamp) }}"></script> -->
+        <script src="/static/js/script.js?version={{ timestamp }}"></script>
     </head>
+    <!-- <body background="{{ url_for ('static', filename='images/selena-1.jpg') }}"> -->
+    <!-- <body style="background: url('https://www.wallpaperu3.com/wp-content/mywallpapers/selena-gomez-wallpaper-4k-680x425.jpg');"> -->
     <body>
         <!-- Navigation Bar -->
-        <div class='nav'>
+        <div id='nav'>
             <p id='currently_playing_song'>{{ playing }}</p>
-            <a id='pause' onclick = 'PauseMusic()'>Pause</a>
-            <a id='next' onclick = 'NextMusic()'>Next</a>
+            <a class='nav_buttons' id='pause' onclick = 'PauseMusic()'>Pause</a>
+            <a class='nav_buttons' id='next' onclick = 'NextMusic()'>Next</a>
         </div>
 
         # block content
         # endblock
 
     </body>
-
-    <script>
-        # block script
-        # endblock
-    </script>
 </html>
-

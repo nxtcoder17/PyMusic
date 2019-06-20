@@ -1,6 +1,18 @@
 body {
+    /* background-image: url ('/static/images/rivals_1.jpg'); */
     color: dodgerblue;
     font-weight: bold;
+    /* background-color: #c15c53; */
+    /* background: url (https://images-na.ssl-images-amazon.com/images/I/71Svj-fdqBL._SX425_.jpg); */
+    /* background-size: cover; */
+    /* background-repeat: no-repeat; */
+    background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    background-repeat; no-repeat;
     background-color: black;
 }
 
@@ -8,6 +20,7 @@ body {
     position: fixed;
     width: 100%;
     background-color: #f4d142;
+    overlay: fixed;
 }
 
 .nav #currently_playing_song {
@@ -40,19 +53,22 @@ body {
 .all_songs {
     margin: 10px;
     display: inline-block;
-    color: dodgerblue;
+    color: #0ec94f;
+    background-color: #293029;
     padding: 10px;
     margin: 10px;
-    border: 2px dotted dodgerblue;
+    /* border: 2px dotted dodgerblue; */
+    /* border: 2px dotted #7f07ff; --> */
     cursor: pointer;
     transition: 0.3s;
     border-radius: 5px;
+    font-family: "Cantarell";
+    opacity: 0.89;
 }
 
-.all_songs:hover { 
+.all_songs:hover {
     background-color: dodgerblue;
     color: black;
     font-weight: bold;
     border: 0px;
 }
-
