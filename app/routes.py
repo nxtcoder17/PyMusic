@@ -40,18 +40,6 @@ def next():
     models.next();
     return ""
 
-@app.route ('/folder')
-@app.route ('/folders')
-def index_folders():
-    return render_template ("folders.html", folders = models.fetch_folders());
-
-@app.route ('/folder', methods=['POST'])
-@app.route ('/folders', methods=['POST'])
-def index_into_the_folder():
-    path = request.form['path']
-    return render_template ('folders.html', folders = models.fetch_folders (path, True));
-
-
 @app.route ('/static/images/backdrop.jpg')
 def return_backdrop ():
     return send_file ('./static/images/selena-1.jpg', mimetype='image/jpeg');
