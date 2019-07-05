@@ -95,3 +95,13 @@ body {
     background-color: var(--my-color);
     cursor: pointer;
 }
+
+#container_songs a.folders {
+    border: 1px solid #ff4400;
+    color: #ff4400;
+}
+
+#container_songs a.folders:nth-child(2n) {
+    border: 1px solid #30ff45;
+    color: #30ff45;
+}
