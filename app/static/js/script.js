@@ -3,7 +3,7 @@ function AjaxCall (song)
     document.getElementById ('currently_playing_song').innerHTML = song.split('/')[song.split('/').length - 1];
 
     $.ajax({
-        url: 'play',
+        url: '/play',
         data: {'file': song},
         type: "POST",
         success: function () { console.log ("Success: " + "Now Playing:" + song); },
@@ -19,7 +19,7 @@ function PauseMusic ()
     btn.id = "resume";
 
     $.ajax ({
-        url: 'pause',
+        url: '/pause',
         type: 'POST',
         success: function () { console.log ("Song paused"); },
         error: function () { console.log ("[ERROR]: Song can't be paused"); }

@@ -40,6 +40,20 @@ def next():
     models.next();
     return ""
 
+@app.route ('/folders/', methods=['GET'])
+def folders():
+    # If their is no query string i.e. it gonna be just <url>/folders
+    if request.query_string == '':
+        dir = None
+    else:
+        dir = request.args.get('dir')
+    folders, songs = models.fetch_folders(dir, True)
+    return render_template ("re_folder.html", 
+                    timestamp = str(int(time.time())),
+                    folders = folders, songs = songs,
+                    me="balor")
+
+
 @app.route ('/static/images/backdrop.jpg')
 def return_backdrop ():
     return send_file ('./static/images/selena-1.jpg', mimetype='image/jpeg');

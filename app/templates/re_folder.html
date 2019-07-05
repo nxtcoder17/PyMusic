@@ -1,0 +1,18 @@
+# extends "base.html"
+
+# block content
+    <div id='container_songs'>
+        # for name in folders:
+            <a class='song' href="?dir={{name}}">{{ name.split('/')[-1] }}</a> <br/>
+        # endfor
+    </div>
+
+    <hr/>
+    <hr/>
+
+    <div id='container_songs'>
+    # for item in songs:
+        <a class='song' onclick='AjaxCall ("{{ item }}")'> {{ item.split('/')[-1] }} </a>
+    # endfor
+    </div>
+# endblock

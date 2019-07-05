@@ -1,1 +1,7 @@
 __pycache__
+__pycahche__/
+__pycahche__/*/
+__pycahche__/*/*/
+.pyc
+.vscode
+.vscode/

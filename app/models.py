@@ -108,19 +108,20 @@ class MyThread (threading.Thread):
 # For Making folder based songs access
 ######################################################
 
-def fetch_folders(dirs = None, files = False):
+def fetch_folders(dirs = None, include_files = False):
     folders = []
+    files = []
     def iter_dir (dir):
         for item in os.listdir (dir):
             t_path = os.path.join (dir, item)
             if os.path.isdir (t_path):
                 folders.append (t_path)
-            if files and os.path.isfile (t_path):
-                folders.append (t_path)
+            if include_files and os.path.isfile (t_path):
+                files.append (t_path)
 
     if not dirs:
         iter_dir (os.path.join (os.getenv ("HOME"), "Music/Albums/Artists"))
     else:
         iter_dir (dirs)
 
-    return folders;
+    return folders if not include_files else (folders, files)
