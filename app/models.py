@@ -120,7 +120,7 @@ def fetch_folders(dirs = None, include_files = False):
                 files.append (t_path)
 
     if not dirs:
-        iter_dir (os.path.join (os.getenv ("HOME"), "Music/Albums/Artists"))
+        iter_dir (os.path.join (os.getenv ("HOME"), "Music/Albums/"))
     else:
         iter_dir (dirs)
 
